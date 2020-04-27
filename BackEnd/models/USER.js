@@ -32,6 +32,8 @@ module.exports = (sequelize, Datatype) => {
     }
   });
 
-  //RelationShip
+  USER.associate(models => {
+    USER.hasOne(models.ORDER)
+  })
   return USER;
 }

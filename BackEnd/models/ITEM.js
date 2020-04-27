@@ -11,7 +11,10 @@ module.exports = (sequelize, Datatype) => {
     }
   })
 
-//Relationship
+  ITEM.associate = (models => {
+    ITEM.hasOne(models.CATEGORY)
+    ITEM.hasBelongTo(models.ORDER, {though: "IN"})
+  })
 
 return ITEM;
 }

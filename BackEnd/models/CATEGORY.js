@@ -14,6 +14,10 @@ module.exports = (sequelize, Datatype) => {
     }
   });
   
-  //Relationship
+  CATEGORY.associate = (models) => {
+    CATEGORY.hasMany(models.ITEM);
+  }
+
   return CATEGORY;
+
 }

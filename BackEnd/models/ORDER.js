@@ -11,6 +11,9 @@ module.exports = (sequelize, Datatype) => {
     }
   });
 
-  //RelationShip
+  ORDER.associate = (models) => {
+    ORDER.hasMany(models.USER)
+    ORDER.hasBelongTo(models.ITEM, {though: "IN"})
+  }
   return ORDER;
 }
