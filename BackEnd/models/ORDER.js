@@ -1,19 +1,19 @@
-module.exports = (sequelize, Datatype) => {
+module.exports = (sequelize, DataTypes) => {
   const ORDER = sequelize.define('Order', {
     OrderHistory: {
-      type: Datatype.String
+      type: DataTypes.STRING
     },
     OrderNumber: {
-      type: Datatype.Number
+      type: DataTypes.INTEGER
     },
     Quantity: {
-      type: Datatype.Number
+      type: DataTypes.INTEGER
     }
   });
 
-  ORDER.associate = (models) => {
-    ORDER.hasMany(models.USER)
-    ORDER.hasBelongTo(models.ITEM, {though: "IN"})
-  }
+  // ORDER.associate = (models) => {
+  //   ORDER.belongsTo(models.User);
+  //   ORDER.belongsToMany(models.Item, {though: models.In, as: 'receiveData', foreignKey: 'ID_Order'});
+  // }
   return ORDER;
 }

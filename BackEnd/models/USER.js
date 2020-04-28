@@ -1,39 +1,40 @@
-module.exports = (sequelize, Datatype) => {
+module.exports = (sequelize, DataTypes) => {
   const USER = sequelize.define('User', {
     Sex: {
-      type: Datatype.String
+      type: DataTypes.STRING
     },
     Name: {
-      type: Datatype.String
+      type: DataTypes.STRING
     },
     Email: {
-      type: Datatype.Email
+      type: DataTypes.STRING
     },
     Telephone: {
-      type: Datatype.Number
+      type: DataTypes.NUMBER
     },
     MobilePhone: {
-      type: Datatype.Number
+      type: DataTypes.NUMBER
     },
     Password: {
-      type: Datatype.String
+      type: DataTypes.STRING
     },
     Address: {
-      type: Datatype.String
+      type: DataTypes.STRING
     },
     VillageBuilding: {
-      type: Datatype.String
+      type: DataTypes.STRING
     },
     Distric: {
-      type: Datatype.String
+      type: DataTypes.STRING
     },
     Province: {
-      type: Datatype.String
+      type: DataTypes.STRING
     }
   });
 
-  USER.associate(models => {
-    USER.hasOne(models.ORDER)
-  })
+  // USER.associate = (models) => {
+  //   USER.hasMany(models.Order);
+  // }
+  
   return USER;
 }

@@ -1,13 +1,17 @@
-module.exports = (sequelize, Datatype) => {
-  const IN = sequelize.define('IN', {
+module.exports = (sequelize, DataTypes) => {
+  const IN = sequelize.define('In', {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
     IDUser: {
-      type: Datatype.Number
+      type: DataTypes.NUMBER
     },
     IDItem: {
-      type: Datatype.Number
+      type: DataTypes.NUMBER
     }
   });
 
-  //Relationship
   return IN;
 }

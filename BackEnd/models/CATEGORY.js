@@ -1,22 +1,24 @@
-module.exports = (sequelize, Datatype) => {
+module.exports = (sequelize, DataTypes) => {
   const CATEGORY = sequelize.define('Category', {
     Notebook: {
-      type: Datatype.String
+      type: DataTypes.STRING
     },
     Server: {
-      type: Datatype.String
+      type: DataTypes.STRING
     },
-    Deaktop: {
-      type: Datatype.String
+    Desktop: {
+      type: DataTypes.STRING
     },
     Accessory: {
-      type: Datatype.String
+      type: DataTypes.STRING
     }
   });
   
-  CATEGORY.associate = (models) => {
-    CATEGORY.hasMany(models.ITEM);
-  }
+  //CATEGORY เขียนให้เป็นตัวพิมพ์ใหญ่เนื่องจาก จะให้ดูแตกต่างจากชื่อของ ตาราง Category
+  // CATEGORY.associate = (models) => {
+  //   CATEGORY.belongsTo(models.Item);
+  //   //(models.Item) .Item นี้ต้องใส่เป็นชื่อตารางนะ
+  // }
 
   return CATEGORY;
 
