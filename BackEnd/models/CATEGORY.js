@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const CATEGORY = sequelize.define('Category', {
+  const category = sequelize.define('category', {
     Notebook: {
       type: DataTypes.STRING
     },
@@ -13,13 +13,13 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING
     }
   });
-  
-  //CATEGORY เขียนให้เป็นตัวพิมพ์ใหญ่เนื่องจาก จะให้ดูแตกต่างจากชื่อของ ตาราง Category
-  // CATEGORY.associate = (models) => {
-  //   CATEGORY.belongsTo(models.Item);
-  //   //(models.Item) .Item นี้ต้องใส่เป็นชื่อตารางนะ
-  // }
 
-  return CATEGORY;
+  // category เขียนให้เป็นตัวพิมพ์ใหญ่เนื่องจาก จะให้ดูแตกต่างจากชื่อของ ตาราง category
+  category.associate = (models) => {
+    category.belongsTo(models.item);
+    //(models.Item) .Item นี้ต้องใส่เป็นชื่อตารางนะ
+  }
+
+  return category;
 
 }

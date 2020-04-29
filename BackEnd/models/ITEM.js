@@ -1,20 +1,20 @@
 module.exports = (sequelize, DataTypes) => {
-  const ITEM = sequelize.define('Item', {
+  const item = sequelize.define('item', {
     Image: {
       type: DataTypes.STRING
     },
     Price: {
-      type: DataTypes.NUMBER
+      type: DataTypes.INTEGER
     },
     Brand: {
       type: DataTypes.STRING
     }
   })
 
-  // ITEM.associate = (models) => {
-  //   ITEM.hasMany(models.Category);
-  //   ITEM.belongsToMany(models.Order, { through: models.In, as: 'sendDataToOrder', foreignKey: 'ID_Item'});
-  // }
+  item.associate = (models) => {
+    item.hasMany(models.category);
+    item.belongsToMany(models.order, { through: 'inrelationship', as: 'sendDataToOrder', foreignKey: 'ID_Item' });
+  }
 
-return ITEM;
+  return item;
 }

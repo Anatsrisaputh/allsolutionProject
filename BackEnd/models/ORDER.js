@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const ORDER = sequelize.define('Order', {
+  const order = sequelize.define('order', {
     OrderHistory: {
       type: DataTypes.STRING
     },
@@ -11,9 +11,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   });
 
-  // ORDER.associate = (models) => {
-  //   ORDER.belongsTo(models.User);
-  //   ORDER.belongsToMany(models.Item, {though: models.In, as: 'receiveData', foreignKey: 'ID_Order'});
-  // }
-  return ORDER;
+  order.associate = (models) => {
+    order.belongsTo(models.user);
+    order.belongsToMany(models.item, { through: 'inrelationship', as: 'receiveData', foreignKey: 'ID_Order' });
+  }
+  return order;
 }

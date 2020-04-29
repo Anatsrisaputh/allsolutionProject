@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const USER = sequelize.define('User', {
+  const user = sequelize.define('user', {
     Sex: {
       type: DataTypes.STRING
     },
@@ -10,10 +10,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING
     },
     Telephone: {
-      type: DataTypes.NUMBER
+      type: DataTypes.INTEGER
     },
     MobilePhone: {
-      type: DataTypes.NUMBER
+      type: DataTypes.INTEGER
     },
     Password: {
       type: DataTypes.STRING
@@ -32,9 +32,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   });
 
-  // USER.associate = (models) => {
-  //   USER.hasMany(models.Order);
-  // }
-  
-  return USER;
+  user.associate = (models) => {
+    user.hasMany(models.order);
+  }
+
+  return user;
 }
