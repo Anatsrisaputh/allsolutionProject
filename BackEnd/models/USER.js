@@ -30,7 +30,12 @@ module.exports = (sequelize, DataTypes) => {
     Province: {
       type: DataTypes.STRING
     }
-  });
+  },
+  {
+    timeStamp: false,
+    tableName: "user"
+  }
+  );
 
   user.associate = (models) => {
     user.hasMany(models.order);

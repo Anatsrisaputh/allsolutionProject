@@ -12,7 +12,12 @@ module.exports = (sequelize, DataTypes) => {
     Accessory: {
       type: DataTypes.STRING
     }
-  });
+  },
+  {
+    tableName: "Category",
+    timeStamp: false
+  }
+  );
 
   // category เขียนให้เป็นตัวพิมพ์ใหญ่เนื่องจาก จะให้ดูแตกต่างจากชื่อของ ตาราง category
   category.associate = (models) => {
