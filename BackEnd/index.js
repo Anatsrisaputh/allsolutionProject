@@ -1,24 +1,37 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const db = require('./models/Index')
+const db = require("./models/Index");
 const userRoute = require("./routes/user");
+const orderRoute = require("./routes/order");
+const itemRoute = require("./routes/item");
+const categoryRoute = require("./routes/category");
 
-// const bodyParser = require('body-parser');
+
 
 
 
 app.use("/user", userRoute);
 
+app.use("/order", orderRoute);
+
+app.use("/item", itemRoute);
+
+app.use("/category", categoryRoute);
 
 
 
-app.use(cors());
+
+// const bodyParser = require('body-parser'); อันนี้เป็นแบบเก่า
 // app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({extended: false}));
 //bodyParser เป็นแบบเก่า แบบใหม่สามารถเขียน แบบนี้ได้เลย
+
+app.use(cors());
 app.use(express.json())
 app.use(express.urlencoded({ extended: false })) 
+
+
 
 
 db.sequelize.sync({ force: true }).then(() => {

@@ -12,22 +12,22 @@ module.exports = (sequelize, DataTypes) => {
     Quantity: {
       type: DataTypes.INTEGER
     },
-    Serial_Number: {
+    SerialNumber: {
       type: DataTypes.STRING
     },
-    Warranty_Start: {
+    WarrantyStart: {
       type: DataTypes.DATE
     },
-    Warranty_End: {
+    WarrantyEnd: {
       type: DataTypes.DATE
     },
-    Warranty_period: {
+    WarrantyPeriod: {
       type:DataTypes.STRING
     }
   },
   {
-    timeStamp: false,
-    tableName: "item"
+    tableName: "item",
+    timestamps: false,
   }
   );
 

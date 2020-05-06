@@ -11,9 +11,10 @@ module.exports = (sequelize, DataTypes) => {
     }
   },
   {
-    timeStamp: false,
-    tableName: "order"
-  });
+    tableName: "order",
+    timestamps: false,
+  }
+  );
 
   order.associate = (models) => {
     order.belongsTo(models.user);
