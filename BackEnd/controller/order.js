@@ -5,7 +5,7 @@ const getAllOrder = async (req, res) => {
   res.send(allOrder);
 };
 
-const getOrserById = async (req, res) => {
+const getOrderById = async (req, res) => {
   const orderId = req.params.id;
   const targetId = await db.order.findOne({ where: { id: orderId }});
 
@@ -32,12 +32,28 @@ const createOrder = async (req, res) => {
   // console.log("New order has been create");
 };
 
+const deleteOrderById = async (req, res) => {
+  const orderId = req.params.id;
+
+  await db.order.destroy({ where: { id: orderId }});
+  res.status(204).send(`Order id: ${orderId} has been delete`);
+};
+
+const editOrderId  = async (req, res) => {
+  const editId = req.params.id;
+
+  await db.order.update({ where: { id: editId }});
+  res.status(200).send(`Order id: ${editId} has been edit`);
+}
+
 
 
 module.exports = {
   getAllOrder,
-  getOrserById,
-  createOrder
+  getOrderById,
+  createOrder,
+  deleteOrderById,
+  editOrderId
 }
 
 

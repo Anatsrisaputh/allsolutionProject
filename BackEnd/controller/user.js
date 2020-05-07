@@ -74,7 +74,7 @@ const editUserById = async (req, res) => {
 
 };
 
-const deleteUser = async (req, res) => {
+const deleteUserById = async (req, res) => {
   const userId = req.params.id;
 
   await db.user.destroy({ where: {id: userId} });
@@ -94,5 +94,5 @@ module.exports = {
   getUserById,
   createNewUser,
   editUserById,
-  deleteUser,
+  deleteUserById,
 }
