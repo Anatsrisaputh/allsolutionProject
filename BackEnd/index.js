@@ -3,16 +3,17 @@ const app = express();
 const cors = require('cors');
 const db = require("./models");
 const userRoute = require("./routes/user");
-
-// const orderRoute = require("./routes/order");
-// const itemRoute = require("./routes/item");
+const orderRoute = require("./routes/order");
+const itemRoute = require("./routes/item");
 // const categoryRoute = require("./routes/category");
 
 
 
 app.use("/user", userRoute);
 
-// app.use("/order", orderRoute);
+app.use("/order", orderRoute);
+
+app.use("/item", itemRoute);
 
 // app.use("/item", itemRoute);
 

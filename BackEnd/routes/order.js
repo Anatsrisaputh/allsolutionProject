@@ -13,3 +13,7 @@ router.post("/createorder", orderController.createOrder);
 router.delete("/delete/:id", orderController.deleteOrderById);
 
 router.put("/edit/:id", orderController.editOrderId);
+
+
+
+module.exports = router;
