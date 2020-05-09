@@ -67,7 +67,8 @@ const editUserById = async (req, res) => {
       VillageBuilding: villageBuilding,
       Distric: distric,
       Province: province
-    }
+    },
+    { where: { id: userId } }
   );
 
   res.status(200).send({message: `User id: ${userId} has been update`});

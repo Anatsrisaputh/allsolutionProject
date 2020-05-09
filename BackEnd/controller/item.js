@@ -54,7 +54,7 @@ const editItem = async (req, res) => {
   const  warrantyperiod = req.body.warrantyperiod;
   const idItem = req.params.id;
 
-  const newItem = await item.update(
+   await item.update(
     {
       Image: image,
       Price: price,
@@ -64,8 +64,9 @@ const editItem = async (req, res) => {
       WarrantyStart: warrantystart,
       WarrantyEnd: warrantyend,
       Warrantyperiod: warrantyperiod
-    }
-  )
+    },
+    { where: {id: idItem}}
+  );
   res.status(200).send({ message: `Item id ${idItem}`});
 };
 

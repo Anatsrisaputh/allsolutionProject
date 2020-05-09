@@ -7,7 +7,7 @@ const getAllOrder = async (req, res) => {
 
 const getOrderById = async (req, res) => {
   const orderId = req.params.id;
-  const targetId = await db.order.findOne({ where: { id: orderId }});
+  const targetId = await db.order.findOne({ where: { id: orderId } });
 
   if (orderId) {
     res.send(targetId);
@@ -35,14 +35,24 @@ const createOrder = async (req, res) => {
 const deleteOrderById = async (req, res) => {
   const orderId = req.params.id;
 
-  await db.order.destroy({ where: { id: orderId }});
+  await db.order.destroy({ where: { id: orderId } });
   res.status(204).send(`Order id: ${orderId} has been delete`);
 };
 
-const editOrderId  = async (req, res) => {
+const editOrderId = async (req, res) => {
   const editId = req.params.id;
+  const orderhistory = req.body.orderhistory;
+  const ordernumber = req.body.ordernumber;
+  const quantity = req.body.quantity;
 
-  await db.order.update({ where: { id: editId }});
+  await db.order.update(
+    {
+      OrderHistory: orderhistory,
+      OrderNumber: ordernumber,
+      Quantity: quantity
+    },
+    { where: { id: editId } }
+  );
   res.status(200).send(`Order id: ${editId} has been edit`);
 }
 
