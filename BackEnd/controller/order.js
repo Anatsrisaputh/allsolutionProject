@@ -7,10 +7,10 @@ const getAllOrder = async (req, res) => {
 
 const getOrderById = async (req, res) => {
   const orderId = req.params.id;
-  const targetId = await db.order.findOne({ where: { id: orderId } });
+  const order = await db.order.findOne({ where: { id: orderId } });
 
-  if (orderId) {
-    res.send(targetId);
+  if (order) {
+    res.send(order);
   } else {
     res.status(400).send("Order not found");
   }

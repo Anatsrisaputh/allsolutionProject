@@ -7,6 +7,9 @@ const orderRoute = require("./routes/order");
 const itemRoute = require("./routes/item");
 const categoryRoute = require("./routes/category");
 
+app.use(cors());
+app.use(express.json())
+app.use(express.urlencoded({ extended: false })) 
 
 
 app.use("/user", userRoute);
@@ -25,14 +28,12 @@ app.use("/category", categoryRoute);
 // app.use(bodyParser.urlencoded({extended: false}));
 //bodyParser เป็นแบบเก่า แบบใหม่สามารถเขียน แบบนี้ได้เลย
 
-app.use(cors());
-app.use(express.json())
-app.use(express.urlencoded({ extended: false })) 
 
 
 
 
-db.sequelize.sync({ force: true }).then(() => {
+
+db.sequelize.sync({ force: false }).then(() => {
   app.listen(8000, () => {
     console.log("Server is running on port 8000")
   })

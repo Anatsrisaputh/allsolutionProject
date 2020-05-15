@@ -1,4 +1,5 @@
 const db = require("../models");
+const bcrypt = require("bcryptjs");
 
 const getAllUser = async (req, res) => {
   const allUser = await req.user.findAll();
@@ -16,32 +17,28 @@ const getUserById = async (req, res) => {
   }
 };
 
+
 const createNewUser = async (req, res) => {
-  const sex = req.body.sex;
+  console.log(req.body);
   const name = req.body.name;
   const email = req.body.email;
-  const telephoneNumber = req.body.telephoneNumber;
-  const mobilePhoneNumber = req.body.mobilePhoneNumber;
-  const address = req.body.address;
-  const villageBuilding = req.body.villageBuilding;
-  const distric = req.body.distric;
-  const province = req.body.province;
+  const password = req.body.password;
 
-  const newUser = await db.user.create(
-    {
-      Sex: sex,
-      Name: name,
-      Email: email,
-      Telephone: telephoneNumber,
-      Phone_Number: mobilePhoneNumber,
-      Address: address,
-      VillageBuilding: villageBuilding,
-      Distric: distric,
-      Province: province
+  const checkUser = await db.user.findOne( { where: { Email: email }});
+    if (!checkUser) {
+      const salt = bcrypt.genSaltSync(12);
+      const hashPassword = bcrypt.hashSync(password, salt);
+      const newUser = await db.user.create(
+        {
+          Name: name,
+          Email: email,
+          Password: hashPassword,
+        }
+      );
+      res.status(201).send({ message: "User create"});
+    } else {
+      res.status(400).send({ message: " Email already taken"});
     }
-  );
-  res.status(201).send(newUser);
-  console.log("Create new user secceed");
 };
 
 const editUserById = async (req, res) => {
@@ -71,24 +68,16 @@ const editUserById = async (req, res) => {
     { where: { id: userId } }
   );
 
-  res.status(200).send({message: `User id: ${userId} has been update`});
+  res.status(200).send({ message: `User id: ${userId} has been update` });
 
 };
 
 const deleteUserById = async (req, res) => {
   const userId = req.params.id;
 
-  await db.user.destroy({ where: {id: userId} });
+  await db.user.destroy({ where: { id: userId } });
   res.status(204).send("User has been delete");
 };
-
-
-
-
-
-
-
-
 
 module.exports = {
   getAllUser,
