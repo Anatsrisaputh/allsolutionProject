@@ -1,18 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Form, Input, Button, Checkbox } from 'antd';
 import axios from "../../config/axios";
 
 function Register() {
   const [form] = Form.useForm();
+  
+
   const onFinish = async values => {
     const body = {
       name: values.name,
       email: values.email,
-      password: values.password
+      password: values.password,
     }
     await axios.post("/user/create", body);
-    
-  };
+    form.setFieldsValue({
+    name: "",
+    email: "",
+    password: "",
+    confirm: "",
+    });
+    alert("Register success");
+  }
 
   const onFinishFailed = errorInfo => {
     console.log('Failed:', errorInfo);
@@ -36,6 +44,7 @@ function Register() {
   return (
     <div>
        <Form
+       form={form}
       {...layout}
       name="basic"
       initialValues={{
@@ -43,7 +52,7 @@ function Register() {
       }}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
-      form={form}
+      
     >
       <Form.Item 
         label="Name"
@@ -114,9 +123,8 @@ function Register() {
       </Form.Item>
 
       <Form.Item {...tailLayout}>
-        <Button type="primary" htmlType="submit" onClick={ () => {
-          form.resetFields()
-        }}>
+        <Button type="primary" htmlType="submit" 
+       >
           Submit
         </Button>
       </Form.Item>
