@@ -8,6 +8,7 @@ import Payment from "./Page/Payment";
 import Profile from "./Page/Profile";
 import Warranty from './Page/Warranty';
 import Register from "./Page/Register";
+import CheckWarranty from './Page/CheckWarranty';
 
 
 function App() {
@@ -27,6 +28,8 @@ function App() {
       <Route exact path="/warranty"> <Warranty /> </Route>
 
       <Route exact path="/register"> <Register /> </Route>
+
+      <Route exact path="/checkwarranty"> <CheckWarranty /> </Route>
         
       
    

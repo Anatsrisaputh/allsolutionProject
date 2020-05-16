@@ -1,0 +1,9 @@
+.container {
+  display: grid;
+  justify-content: center;
+}
+
+.container.item {
+  
+  justify-content: center;
+}
