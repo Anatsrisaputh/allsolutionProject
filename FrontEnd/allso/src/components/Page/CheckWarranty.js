@@ -3,15 +3,23 @@ import React, { useState } from 'react';
 import "../../style/checkwarranty.css";
 
 
-
-
-
-
 function CheckWarranty() {
+
+  const [showData, setShowData] = useState({});
+
   return (
     <div className="grid-container">
-      <div className="grid-item item1">
-          div item 1
+
+      <div className="grid-item item2">
+        <form>
+          Serial number:	&nbsp;
+          <input label="Serialnumber"type="text" id="searchBar"></input>
+          <button id="searchButton">Search</button>
+        </form>
+      </div>
+
+      <div className="grid-item item3">
+        Show state
       </div>
 
     </div>
