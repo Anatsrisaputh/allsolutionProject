@@ -21,9 +21,6 @@ module.exports = (sequelize, DataTypes) => {
     WarrantyEnd: {
       type: DataTypes.DATE
     },
-    WarrantyPeriod: {
-      type:DataTypes.STRING
-    }
   },
   {
     tableName: "item",

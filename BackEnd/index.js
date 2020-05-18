@@ -21,17 +21,10 @@ app.use("/item", itemRoute);
 app.use("/category", categoryRoute);
 
 
-
-
 // const bodyParser = require('body-parser'); อันนี้เป็นแบบเก่า
 // app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({extended: false}));
 //bodyParser เป็นแบบเก่า แบบใหม่สามารถเขียน แบบนี้ได้เลย
-
-
-
-
-
 
 db.sequelize.sync({ force: false }).then(() => {
   app.listen(8000, () => {

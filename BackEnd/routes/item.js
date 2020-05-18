@@ -9,6 +9,8 @@ router.get("/getall", routerController.getAllItem);
 
 router.get("/getid/:id", routerController.getIdItem);
 
+router.get("/serial/?", routerController.getSerialNumber);
+
 router.put("/edit/:id", routerController.editItem);
 
 router.delete("/delete/:id", routerController.deleteItem);

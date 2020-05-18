@@ -8,7 +8,6 @@ const createItem = async (req, res) => {
   const serialnumber = req.body.serialnumber;
   const warrantystart = req.body.warrantystart;
   const warrantyend = req.body.warrantyend;
-  const  warrantyperiod = req.body.warrantyperiod;
   
   const addItem = await db.item.create(
     {
@@ -16,10 +15,9 @@ const createItem = async (req, res) => {
       Price: price,
       Brand: brand,
       Quantity: quantity,
-      Serialnumber: serialnumber,
+      SerialNumber: serialnumber,
       WarrantyStart: warrantystart,
       WarrantyEnd: warrantyend,
-      Warrantyperiod: warrantyperiod
     }
   )
   res.status(201).send(addItem);
@@ -32,13 +30,24 @@ const getAllItem = async (req, res) => {
 };
 
 const getIdItem = async (req, res) => {
-  const idItem = Number(req.params.id);
+  const idItem = (req.params.id);
   const targetItem = await item.findOne({ where: { id: idItem }});
   
   if (targetItem) {
     res.send(targetItem);
   } else {
     res.status(400).send({ message: "Item not found" });
+  }
+
+};
+
+const getSerialNumber = async (req, res) => {
+  const serialNo = (req.body.serialnumber);
+  const searchBySerial = await item.findOne({ where: { SerialNumber: serialNo }});
+  if (searchBySerial === serialNo) {
+    res.send(searchBySerial);
+  } else {
+    res.status(400).send({ message: "Serial number not found" });
   }
 
 };
@@ -51,7 +60,6 @@ const editItem = async (req, res) => {
   const serialnumber = req.body.serialnumber;
   const warrantystart = req.body.warrantystart;
   const warrantyend = req.body.warrantyend;
-  const  warrantyperiod = req.body.warrantyperiod;
   const idItem = req.params.id;
 
    await item.update(
@@ -60,10 +68,9 @@ const editItem = async (req, res) => {
       Price: price,
       Brand: brand,
       Quantity: quantity,
-      Serialnumber: serialnumber,
+      SerialNumber: serialnumber,
       WarrantyStart: warrantystart,
       WarrantyEnd: warrantyend,
-      Warrantyperiod: warrantyperiod
     },
     { where: {id: idItem}}
   );
@@ -83,4 +90,5 @@ module.exports = {
   getIdItem,
   editItem,
   deleteItem,
+  getSerialNumber
 }
