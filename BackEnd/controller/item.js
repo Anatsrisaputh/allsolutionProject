@@ -1,21 +1,23 @@
 const db = require("../models");
 
 const createItem = async (req, res) => {  
+  const id = req.body.id;
   const image = req.body.image;
+  const name = req.body.name;
   const price = req.body.price;
   const brand = req.body.brand;
   const quantity = req.body.quantity;
-  const serialnumber = req.body.serialnumber;
   const warrantystart = req.body.warrantystart;
   const warrantyend = req.body.warrantyend;
   
   const addItem = await db.item.create(
     {
+      id: id,
       Image: image,
+      Name: name,
       Price: price,
       Brand: brand,
       Quantity: quantity,
-      SerialNumber: serialnumber,
       WarrantyStart: warrantystart,
       WarrantyEnd: warrantyend,
     }
@@ -25,13 +27,13 @@ const createItem = async (req, res) => {
 };
 
 const getAllItem = async (req, res) => {
-  const allItem = await req.item.findAll();
+  const allItem = await db.item.findAll();
   res.send(allItem);
 };
 
 const getIdItem = async (req, res) => {
   const idItem = (req.params.id);
-  const targetItem = await item.findOne({ where: { id: idItem }});
+  const targetItem = await db.item.findOne({ where: { id: idItem }});
   
   if (targetItem) {
     res.send(targetItem);
@@ -42,10 +44,11 @@ const getIdItem = async (req, res) => {
 };
 
 const getSerialNumber = async (req, res) => {
-  const serialNo = (req.body.serialnumber);
-  const searchBySerial = await item.findOne({ where: { SerialNumber: serialNo }});
-  if (searchBySerial === serialNo) {
-    res.send(searchBySerial);
+  const serialNo = req.query.serialnumber;
+
+  await db.item.findAll({ where: { SerialNumber: serialNo }});
+  if (serialNo) {
+    res.send(req.query);
   } else {
     res.status(400).send({ message: "Serial number not found" });
   }
@@ -53,22 +56,24 @@ const getSerialNumber = async (req, res) => {
 };
 
 const editItem = async (req, res) => {
+  const id = req.body.id;
   const image = req.body.image;
+  const name = req.body.name;
   const price = req.body.price;
   const brand = req.body.brand;
   const quantity = req.body.quantity;
-  const serialnumber = req.body.serialnumber;
   const warrantystart = req.body.warrantystart;
   const warrantyend = req.body.warrantyend;
   const idItem = req.params.id;
 
    await item.update(
     {
+      id: id,
       Image: image,
       Price: price,
+      Name: name,
       Brand: brand,
       Quantity: quantity,
-      SerialNumber: serialnumber,
       WarrantyStart: warrantystart,
       WarrantyEnd: warrantyend,
     },

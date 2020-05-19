@@ -1,8 +1,15 @@
 module.exports = (sequelize, DataTypes) => {
   const item = sequelize.define('item', {
+    id: {
+      type: DataTypes.STRING,
+      primaryKey: true
+    },
     Image: {
       type: DataTypes.STRING
     },
+    Name: {
+      type: DataTypes.STRING
+    }, 
     Price: {
       type: DataTypes.INTEGER
     },
@@ -11,9 +18,6 @@ module.exports = (sequelize, DataTypes) => {
     },
     Quantity: {
       type: DataTypes.INTEGER
-    },
-    SerialNumber: {
-      type: DataTypes.STRING
     },
     WarrantyStart: {
       type: DataTypes.DATE
