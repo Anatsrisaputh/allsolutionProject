@@ -32,7 +32,7 @@ const getAllItem = async (req, res) => {
 };
 
 const getIdItem = async (req, res) => {
-  const idItem = (req.params.id);
+  const idItem = (req.query.id);
   const targetItem = await db.item.findOne({ where: { id: idItem }});
   
   if (targetItem) {
@@ -44,11 +44,12 @@ const getIdItem = async (req, res) => {
 };
 
 const getSerialNumber = async (req, res) => {
-  const serialNo = req.query.serialnumber;
+  const id = req.query.id;
 
-  await db.item.findAll({ where: { SerialNumber: serialNo }});
-  if (serialNo) {
-    res.send(req.query);
+  const searchItem = await db.item.findAll({ where: { id: id }});
+  console.log(searchItem);
+  if (searchItem) {
+    res.send(searchItem);
   } else {
     res.status(400).send({ message: "Serial number not found" });
   }
@@ -64,7 +65,6 @@ const editItem = async (req, res) => {
   const quantity = req.body.quantity;
   const warrantystart = req.body.warrantystart;
   const warrantyend = req.body.warrantyend;
-  const idItem = req.params.id;
 
    await item.update(
     {

@@ -7,7 +7,7 @@ router.post("/add", routerController.createItem);
 
 router.get("/getall", routerController.getAllItem);
 
-router.get("/getid/:id", routerController.getIdItem);
+router.get("/checkwarranty", routerController.getIdItem);
 
 router.get("/serial", routerController.getSerialNumber);
 
