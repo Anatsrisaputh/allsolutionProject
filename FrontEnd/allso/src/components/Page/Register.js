@@ -1,6 +1,7 @@
 import React from 'react'
 import { Form, Input, Button, Checkbox } from 'antd';
 import axios from "../../config/axios";
+import "../../style/register.css";
 
 function Register() {
   const [form] = Form.useForm();
@@ -42,7 +43,7 @@ function Register() {
   };
 
   return (
-    <div>
+    <div className="grid-container">
        <Form
        form={form}
       {...layout}
