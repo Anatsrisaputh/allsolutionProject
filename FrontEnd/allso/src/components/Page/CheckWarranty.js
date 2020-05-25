@@ -35,9 +35,9 @@ function CheckWarranty() {
 
 
   return (
-    <div className="grid-container">
+    <div className="checkwarranty-container">
 
-      <div className="grid-item item2">
+      <div className="checkwarranty-item-item2">
         <form>
           Serial number:	&nbsp;
           <input label="Serialnumber" type="text" id="searchBar"
@@ -46,7 +46,7 @@ function CheckWarranty() {
         </form>
       </div>
 
-      <div className="grid-item item3">
+      <div className="checkwarranty-item-item3">
         {showSerial.map((obj) => <p>{`id : ${obj.id} name: ${obj.name} brand : ${obj.brand} Warranty start : ${obj.warrantyStart} Warranty end: ${obj.warrantyEnd} `}</p>)}
       </div>
 
