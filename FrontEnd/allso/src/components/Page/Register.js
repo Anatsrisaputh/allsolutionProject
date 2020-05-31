@@ -43,7 +43,7 @@ function Register() {
   };
 
   return (
-    <div className="grid-container">
+    <div className="Register-container">
        <Form
        form={form}
       {...layout}

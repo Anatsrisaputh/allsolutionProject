@@ -1,0 +1,47 @@
+.Home-container {
+  background-color: #0060AD;
+  border: 1px solid black;
+  display: grid;
+  height: 700px;
+  width: 100%;
+  grid-template-rows: 10% 30% 40% 10%;
+}
+.Main-nav {
+  background-color: #EFEDED;
+  border: 1px solid black;
+  margin-left: 15%;
+  margin-right: 15%;
+  display: grid;
+  grid-template-columns: 15% 15% 40% 15% 15%;
+
+}
+.Home-center {
+  display: grid;
+  background-color: #EFEDED;
+  border: 1px solid black;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+}
+.home-menu {
+  /* background-color: #EFEDED; */
+  border: 1px solid black;
+}
+.Home-slide {
+  /* background-color: #EFEDED; */
+  border: 1px solid black;
+}
+.Home-footer {
+  background-color: #EFEDED;
+  border: 1px solid black;
+}
+.card-1 {
+  border: 1px solid black;
+}
+.card-2 {
+  border: 1px solid black;
+}
+.card-3 {
+  border: 1px solid black;
+}
+.card-4 {
+  border: 1px solid black;
+}
