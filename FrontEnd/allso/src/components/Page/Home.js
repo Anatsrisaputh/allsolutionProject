@@ -10,19 +10,35 @@ function Home() {
 
         <div className="item-home-home"> logo home </div>
 
-        <div className="item-home-search"> search </div>
+        <div className="item-home-search"> search
+        <form>
+            <input type="text" id="home-search" /><button id="home-search-button">Search</button>
+          </form>
+
+        </div>
 
         <div className="item-home-cart"> search </div>
 
         <div className="item-home-profile"> profile </div>
       </div>
-      
+
       <div className="Home-center">
         <div className="home-menu">
-        <div className="Home-center-item-Notebook">Notebook</div>
-        <div className="Home-center-item-Desktop">Desktop</div>
-        <div className="Home-center-item-Server">Server</div>
-        <div className="Home-center-item-SSD">SSD</div>
+          <div className="Home-center-item-notebook">
+            <button id="left-menu-button">Notebook</button>
+          </div>
+
+          <div className="Home-center-item-desktop">
+            <button id="left-menu-button">Desktop</button>
+          </div>
+
+          <div className="Home-center-item-server">
+            <button id="left-menu-button">Server</button>
+          </div>
+
+          <div className="Home-center-item-ssd">
+            <button id="left-menu-button">SSD</button>
+          </div>
         </div>
 
         <div className="card-1">card-1</div>
