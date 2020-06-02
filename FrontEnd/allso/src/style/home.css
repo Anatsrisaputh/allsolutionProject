@@ -45,7 +45,8 @@
 }
 .home-menu {
   /* background-color: #EFEDED; */
-  border: 1px solid black;
+  margin-top: 10%;
+  /* border: 1px solid black; */
   text-align: center;
 
 }
@@ -58,6 +59,7 @@
 }
 #left-menu-button{
   width: 100%;
+  
 }
 .Home-footer {
   background-color: #EFEDED;
