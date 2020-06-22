@@ -19,16 +19,12 @@ const getUserById = async (req, res) => {
 
 
 const createNewUser = async (req, res) => {
-  console.log(req.body);
-  const name = req.body.name;
-  const email = req.body.email;
-  const password = req.body.password;
-
+  const {name, email, password} = req.body;
   const checkUser = await db.user.findOne( { where: { Email: email }});
     if (!checkUser) {
       const salt = bcrypt.genSaltSync(12);
       const hashPassword = bcrypt.hashSync(password, salt);
-      const newUser = await db.user.create(
+      await db.user.create(
         {
           Name: name,
           Email: email,
@@ -43,16 +39,7 @@ const createNewUser = async (req, res) => {
 
 const editUserById = async (req, res) => {
   const userId = req.params.id;
-  const sex = req.body.sex;
-  const name = req.body.name;
-  const email = req.body.email;
-  const telephoneNumber = req.body.telephoneNumber;
-  const mobilePhoneNumber = req.body.mobilePhoneNumber;
-  const address = req.body.address;
-  const villageBuilding = req.body.villageBuilding;
-  const distric = req.body.distric;
-  const province = req.body.province;
-
+  const {sex, name, email, telephoneNumber, mobilePhoneNumber, address, villageBuilding, distric, province} = req.body;
   await db.user.update(
     {
       Sex: sex,
@@ -67,9 +54,7 @@ const editUserById = async (req, res) => {
     },
     { where: { id: userId } }
   );
-
   res.status(200).send({ message: `User id: ${userId} has been update` });
-
 };
 
 const deleteUserById = async (req, res) => {
