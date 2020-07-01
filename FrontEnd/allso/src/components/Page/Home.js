@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react';
 import "../../style/home.css";
 
 function Home() {
+  const [card_1, setCard_1] = useState([]);
+  const [card_2, setCard_2] = useState([]);
+  const [card_3, setCard_3] = useState([]);
+  const [card_4, setCard_4] = useState([]);
+
+
+
   return (
     <div className="Home-container">
 
