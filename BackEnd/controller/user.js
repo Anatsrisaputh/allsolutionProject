@@ -11,9 +11,9 @@ const getUserById = async (req, res) => {
   const targetUser = await db.user.findOne({ where: { id: idUser } });
 
   if (targetUser) {
-    res.send(targetUser);
+   return res.send(targetUser);
   } else {
-    res.status(400).send("User not found");
+   return res.status(400).send("User not found");
   }
 };
 
