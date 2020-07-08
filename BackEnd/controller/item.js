@@ -1,14 +1,8 @@
 const db = require("../models");
 
 const createItem = async (req, res) => {  
-  const id = req.body.id;
-  const image = req.body.image;
-  const name = req.body.name;
-  const price = req.body.price;
-  const brand = req.body.brand;
-  const quantity = req.body.quantity;
-  const warrantystart = req.body.warrantystart;
-  const warrantyend = req.body.warrantyend;
+  const id = req.params.id;
+  const { image, name, price, brand, quantity, warrantystart, warrantyend} = req.body;
   
   const addItem = await db.item.create(
     {
@@ -32,7 +26,7 @@ const getAllItem = async (req, res) => {
 };
 
 const getIdItem = async (req, res) => {
-  const idItem = (req.query.id);
+  const idItem = req.query.id;
   const targetItem = await db.item.findOne({ where: { id: idItem }});
   
   if (targetItem) {
@@ -57,14 +51,8 @@ const getSerialNumber = async (req, res) => {
 };
 
 const editItem = async (req, res) => {
-  const id = req.body.id;
-  const image = req.body.image;
-  const name = req.body.name;
-  const price = req.body.price;
-  const brand = req.body.brand;
-  const quantity = req.body.quantity;
-  const warrantystart = req.body.warrantystart;
-  const warrantyend = req.body.warrantyend;
+  const id = req.params.id;
+  const { image, name, price, brand, quantity, warrantystart, warrantyend} = req.body;
 
    await item.update(
     {
@@ -77,9 +65,9 @@ const editItem = async (req, res) => {
       WarrantyStart: warrantystart,
       WarrantyEnd: warrantyend,
     },
-    { where: {id: idItem}}
+    { where: {id: id}}
   );
-  res.status(200).send({ message: `Item id ${idItem}`});
+  res.status(200).send({ message: `Item id ${id}`});
 };
 
 const deleteItem = async (req, res) => {

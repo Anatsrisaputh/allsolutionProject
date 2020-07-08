@@ -9,7 +9,7 @@ import Profile from "./Page/Profile";
 import Warranty from './Page/Warranty';
 import Register from "./Page/Register";
 import CheckWarranty from './Page/CheckWarranty';
-import CreateItems from './Page/CreateItems';
+import AddWarranty from './Page/AddWarranty';
 
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
       <Route exact path="/warranty"> <Warranty /> </Route>
       <Route exact path="/register"> <Register /> </Route>
       <Route exact path="/checkwarranty"> <CheckWarranty /> </Route>
-      <Route exact path="/create-items"> <CreateItems /> </Route>
+      <Route exact path="/add-warranty"> <AddWarranty /> </Route>
       
    
 

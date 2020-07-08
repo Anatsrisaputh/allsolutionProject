@@ -1,7 +1,7 @@
 import React from 'react'
 import "../../style/createitems.css"
 
-export default function CreateItems() {
+export default function AddWarranty() {
   return (
     <div className="create-items-main">
       <div className="create-form">

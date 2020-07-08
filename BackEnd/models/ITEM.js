@@ -18,13 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     Quantity: {
       type: DataTypes.INTEGER
-    },
-    WarrantyStart: {
-      type: DataTypes.DATE
-    },
-    WarrantyEnd: {
-      type: DataTypes.DATE
-    },
+    }
   },
   {
     tableName: "item",
