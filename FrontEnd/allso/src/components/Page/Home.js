@@ -13,9 +13,11 @@ function Home() {
     <div className="Home-container">
 
       <div className="Main-nav">
-        <div className="item-home-logo"> logo </div>
+        <div className="item-home-logo"> logo 
+    
+        </div>
 
-        <div className="item-home-home"> logo home </div>
+        <div className="item-home-home"> logo home 89 </div>
 
         <div className="item-home-search"> search
         <form>
