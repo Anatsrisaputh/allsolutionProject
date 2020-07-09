@@ -1,13 +1,15 @@
 const db = require("../models");
 
 const createWarranty = async (req, res) => {
-  const {serial_id, warranty_start, warranty_end} = req.body;
+  const {serial_id, warranty_start, warranty_end, warranty_duration_years, warranty_duration_months} = req.body;
   const checkSerial = await db.warranty.findOne({ where: {serial_id: serial_id}})
   if ( !checkSerial) {
      await db.warranty.create({
       serial_id: serial_id,
       warranty_start: warranty_start,
-      warranty_end: warranty_end
+      warranty_end: warranty_end,
+      warranty_duration_years: warranty_duration_years,
+      warranty_duration_months: warranty_duration_months
     })
     return res.status(201).send({message: `Serial Number ${checkSerial} has been create`});
   } else {

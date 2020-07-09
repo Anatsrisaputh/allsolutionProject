@@ -10,6 +10,12 @@ module.exports = (sequelize, DataTypes) => {
     warranty_end: {
       type: DataTypes.DATE
     },
+    warranty_duration_years: {
+      type: DataTypes.STRING(2)
+    },
+    warranty_duration_months: {
+      type: DataTypes.STRING(2)
+    }
   },
   {
     tableName: "warranty"
