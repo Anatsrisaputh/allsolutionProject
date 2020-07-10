@@ -1,18 +1,22 @@
 const db = require("../models");
 
 const getCategory = async (req, res) => {
-  const allCategory = await req.category.findAll();
+  const allCategory = await db.category.findAll();
   res.send(allCategory);
 };
 
 const getCategoryById = async (req, res) => {
-  const categoryId = req.params.id;
-  const targetCategory = await req.category.findOne({ where: { id: categoryId } });
-
-  if (targetCategory) {
-    res.send(targetCategory);
-  } else {
-    res.status(400).send({ message: "Category not found" });
+  try {
+    const categoryId = req.params.id;
+    const targetCategory = await db.category.findOne({ where: { id: categoryId } });
+  
+    if (targetCategory) {
+      res.send(targetCategory);
+    } else {
+      res.status(400).send({ message: "Category not found" });
+    }
+  } catch(err) {
+    res.status(500).send({message: err.message})
   }
 };
 
