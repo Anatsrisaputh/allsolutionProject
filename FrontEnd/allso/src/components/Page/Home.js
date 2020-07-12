@@ -31,8 +31,8 @@ function Home() {
 
         <div className="item-home-profile"> profile </div>
       </div>
-      {/* ----------------End Main Nav --------------- */}
-
+      
+        {/* ----------------Left Menu --------------- */}
       <div className="Home-center">
         <div className="home-menu">
           <div className="Home-center-item-notebook">
@@ -52,6 +52,7 @@ function Home() {
           </div>
         </div>
 
+        {/*---------- Card ----------*/}
         <div className="card-1">card-1</div>
 
         <div className="card-2">card-2</div>
@@ -61,8 +62,10 @@ function Home() {
         <div className="card-4">card-4</div>
       </div>
 
+        {/*---------- Slide ----------*/}
       <div className="Home-slide">Slide</div>
 
+        {/*---------- Footer ----------*/}
       <div className="Home-footer">Footer</div>
     </div>
   )

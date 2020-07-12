@@ -62,6 +62,7 @@ export default function Profile() {
 
         <div className="profile-tax-invoice">
         <h3><b>ข้อมูลใบกำกับภาษี</b></h3>
+        
         </div>
 
       </div>

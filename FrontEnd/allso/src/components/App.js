@@ -10,6 +10,7 @@ import Warranty from './Page/Warranty';
 import Register from "./Page/Register";
 import CheckWarranty from './Page/CheckWarranty';
 import AddWarranty from './Page/AddWarranty';
+import ConfirmCart from "./Page/ConfirmCart";
 
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
       <Route exact path="/register"> <Register /> </Route>
       <Route exact path="/checkwarranty"> <CheckWarranty /> </Route>
       <Route exact path="/add-warranty"> <AddWarranty /> </Route>
-      
+      <Route exact path="/confirm-cart"> <ConfirmCart /> </Route>
    
 
     </Switch>
