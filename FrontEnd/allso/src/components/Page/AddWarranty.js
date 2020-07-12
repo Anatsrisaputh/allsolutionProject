@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import "../../style/createitems.css"
+import "../../style/addWarranty.css"
 import axios from "../../config/axios"
 
 export default function AddWarranty() {

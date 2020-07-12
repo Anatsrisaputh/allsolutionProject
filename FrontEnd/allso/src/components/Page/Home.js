@@ -11,7 +11,8 @@ function Home() {
 
   return (
     <div className="Home-container">
-
+      
+      {/* Main Nav */}
       <div className="Main-nav">
         <div className="item-home-logo"> logo 
     
@@ -30,6 +31,7 @@ function Home() {
 
         <div className="item-home-profile"> profile </div>
       </div>
+      {/* ----------------End Main Nav --------------- */}
 
       <div className="Home-center">
         <div className="home-menu">

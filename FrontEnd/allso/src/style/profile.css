@@ -1,0 +1,80 @@
+.Main-Profile-Container {
+  display: grid;
+  width: 1440px;
+  height: 1080px;
+  grid-template-rows: 10% 45% 45%;
+}
+
+/* ---------- Top Element ----------*/
+.Main-nav {
+  background-color: #EFEDED;
+  border: 1px solid black;
+  margin-left: 15%;
+  margin-right: 15%;
+  display: grid;
+  grid-template-columns: 15% 15% 40% 15% 15%;
+}
+
+/* ---------- Center Element ----------*/
+.profile-center {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-content: center;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+.profile-personal-data {
+  margin-left: 10%;
+  margin-top: 5%;
+}
+
+
+
+
+/* ---------- Bottom Element ----------*/
+.profile-bottom {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-content: center;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+
+/*------------------btn---------------*/
+#btn-name {
+  background-color: white; 
+  color: black; 
+  border: 0.1px solid #555555;
+  width: 100%;
+}
+#btn-name:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+#btn-order-list {
+  background-color: white; 
+  color: black; 
+  border: 0.1px solid #555555;
+  width: 100%;
+}
+#btn-order-list:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+#btn-profile-logout {
+  background-color: white; 
+  color: black; 
+  border: 0.1px solid #555555;
+  width: 100%;
+}
+#btn-profile-logout:hover {
+  background-color: #f44336;
+  color: white;
+}
+/*-------------------------------------*/
+
+
+
