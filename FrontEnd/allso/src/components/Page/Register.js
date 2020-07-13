@@ -1,7 +1,7 @@
 import React from 'react'
 import { Form, Input, Button, Checkbox } from 'antd';
 import axios from "../../config/axios";
-import "../../style/register.css";
+import "../style/register.css";
 
 function Register() {
   const [form] = Form.useForm();

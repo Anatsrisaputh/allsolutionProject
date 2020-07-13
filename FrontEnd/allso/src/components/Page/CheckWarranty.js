@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from "../../config/axios";
-import "../../style/checkwarranty.css";
+import "../style/checkwarranty.css";
 
 
 

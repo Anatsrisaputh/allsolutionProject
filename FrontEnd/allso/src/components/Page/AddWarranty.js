@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import "../../style/addWarranty.css"
+import "../style/addWarranty.css"
 import axios from "../../config/axios"
 
 export default function AddWarranty() {
@@ -34,9 +34,13 @@ export default function AddWarranty() {
     }
     console.log(body);
     e.preventDefault();
-    await axios.post("/warranty/create", body);
-    setSerialValue("");
-    alert("Warranty has been create");
+    try {
+      await axios.post("/warranty/create", body);
+      setSerialValue("");
+      alert("Warranty has been create");
+    } catch(err) {
+      console.log(err);
+    }
   }
 
   return (

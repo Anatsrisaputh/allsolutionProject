@@ -1,5 +1,5 @@
 import React from 'react'
-import "../../style/warranty.css";
+import "../style/warranty.css";
 
 function Warranty() {
   return (

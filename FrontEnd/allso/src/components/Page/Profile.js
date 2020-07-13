@@ -1,5 +1,5 @@
 import React from 'react'
-import "../../style/profile.css" 
+import "../style/profile.css" 
 
 export default function Profile() {
   return (
