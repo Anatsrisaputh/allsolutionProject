@@ -2,8 +2,8 @@
   background-color: #0060AD;
   border: 1px solid black;
   display: grid;
-  height: 1080px;
-  width: 1440px;
+  height: 1920px;
+  width: 1080px;
   margin-left: 12.5%;
   margin-right: 12.5%;                                                                               ;
   grid-template-rows: 10% 30% 40% 10%;
@@ -26,13 +26,15 @@
   margin-right: 15%;
   display: grid;
   grid-template-columns: 15% 15% 40% 15% 15%;
+  height: 90px;
+  width: auto;
 }
 
 .Home-center {
   display: grid;
   background-color: #EFEDED;
   border: 1px solid black;
-  grid-template-columns: 10% 20% 20% 20% 20%;
+  grid-template-columns: 20% 20% 20% 20% 20%;
 }
 .home-menu {
   /* background-color: #EFEDED; */
@@ -59,9 +61,14 @@
 .card-1 {
   border: 1px solid black;
   justify-content: center;
+  width: auto;
+  height:auto;
 }
 .card-2 {
   border: 1px solid black;
+  justify-content: center;
+  width: auto;
+  height:auto;
 }
 #card2-img {
   width: 100%;
@@ -70,7 +77,13 @@
 
 .card-3 {
   border: 1px solid black;
+  justify-content: center;
+  width: auto;
+  height:auto;
 }
 .card-4 {
   border: 1px solid black;
+  justify-content: center;
+  width: auto;
+  height:auto;
 }

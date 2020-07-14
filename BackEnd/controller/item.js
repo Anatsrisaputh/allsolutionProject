@@ -12,8 +12,6 @@ const createItem = async (req, res) => {
       Price: price,
       Brand: brand,
       Quantity: quantity,
-      WarrantyStart: warrantystart,
-      WarrantyEnd: warrantyend,
     }
   )
   res.status(201).send(addItem);
@@ -52,7 +50,7 @@ const getSerialNumber = async (req, res) => {
 
 const editItem = async (req, res) => {
   const id = req.params.id;
-  const { image, name, price, brand, quantity, warrantystart, warrantyend} = req.body;
+  const { image, name, price, brand, quantity, } = req.body;
 
    await item.update(
     {
@@ -62,12 +60,10 @@ const editItem = async (req, res) => {
       Name: name,
       Brand: brand,
       Quantity: quantity,
-      WarrantyStart: warrantystart,
-      WarrantyEnd: warrantyend,
     },
     { where: {id: id}}
   );
-  res.status(200).send({ message: `Item id ${id}`});
+  res.status(200).send({ message: `Item id ${id} has been update`});
 };
 
 const deleteItem = async (req, res) => {

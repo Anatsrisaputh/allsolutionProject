@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React,  { useState  } from 'react';
+import Route, { Link } from 'react-router-dom'
 import "../style/home.css";
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
@@ -20,6 +21,10 @@ function Home() {
 
   const Card2 = require('../web-img/Cart.PNG')
 
+  const linkToHome = ()=> {
+    console.log("Link to Home page")
+  }
+
 
   return (
     <div className="Home-container">
@@ -30,7 +35,7 @@ function Home() {
     
         </div>
 
-        <div className="item-home-home" onClick={()=>{console.log("Home")}}> <HomeRoundedIcon fontSize={"large"}/> </div>
+        <div className="item-home-home" onClick={linkToHome}> <HomeRoundedIcon fontSize={"large"}/> </div>
 
         <div className="item-home-search"> search
         <form>
@@ -79,8 +84,10 @@ function Home() {
         </div>
 
         <div className="card-2">card-2</div>
-          <img alt="Card-2" src={Card2} id="card2-img"/>
-        <div className="card-3">card-3</div>
+          
+        <div className="card-3">card-3 
+          <img alt="Card-2" src={Card2} id="card2-img"/>  
+        </div>
 
         <div className="card-4">card-4</div>
       </div>

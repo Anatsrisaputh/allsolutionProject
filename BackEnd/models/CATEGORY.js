@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     Desktop: {
       type: DataTypes.STRING
     },
-    Accessory: {
+    SSD: {
       type: DataTypes.STRING
     }
   },

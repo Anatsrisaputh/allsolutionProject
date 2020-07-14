@@ -21,39 +21,37 @@ const getCategoryById = async (req, res) => {
 };
 
 const createNewCategory = async (req, res) => {
-  const notebook = req.body.notebook;
-  const server = req.body.server;
-  const desktop = req.body.desktop;
-  const accessory = req.body.accessory;
-
-  const addCategory = await db.category.create(
-    {
-      Notebook: notebook,
-      Server: server,
-      Desktop: desktop,
-      Accessory: accessory,
-    }
-  );
-  res.status(201).send(addCategory);
+  const {notebook, server, desktop, ssd} = req.body;
+  try {
+    await db.category.create(
+      {
+        Notebook: notebook,
+        Server: server,
+        Desktop: desktop,
+        SSD: ssd,
+      }
+    );
+  } catch(err) {
+    res.status(201).send({message: err});
+  }
+  
 };
 
 const editCategory = async (req, res) => {
-  const categoryId = req.params.id;
-  const notebook = req.body.notebook;
-  const server = req.body.server;
-  const desktop = req.body.desktop;
-  const accessory = req.body.accessory;
-
-  await db.category.update(
-    {
-      Notebook: notebook,
-      Server: server,
-      Desktop: desktop,
-      Accessory: accessory,
-    },
-    { where: { id: categoryId } }
-  );
-  res.status(200).send({ message: `Category id: ${categoryId} has been update` });
+  const {notebook, server, desktop, ssd} = req.body;
+  try {
+    await db.category.update(
+      {
+        Notebook: notebook,
+        Server: server,
+        Desktop: desktop,
+        SSD: ssd,
+      },
+      { where: { id: categoryId } }
+    );
+  } catch(err) {
+    res.status(200).send({ message: err });
+  }
 };
 
 const deleteCategory = async (req, res) => {

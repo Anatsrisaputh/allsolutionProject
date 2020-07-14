@@ -1,6 +1,7 @@
 const db = require("../models");
 
 const createWarranty = async (req, res) => {
+  
   try {
     const {serial_id, warranty_start, warranty_duration_years, warranty_duration_months} = req.body;
     const newWarrantyStart = warranty_start.split("-");
@@ -41,6 +42,5 @@ const editWarranty = async (req, res) => {
   }, {where: {serial_id: serial_id}});
   res.status(200).send({ message: `serial_id: ${serial_id} has been update` });
 }
-
 
 module.exports = {createWarranty, editWarranty};

@@ -39,10 +39,10 @@ const createNewUser = async (req, res) => {
 
 const editUserById = async (req, res) => {
   const userId = req.params.id;
-  const {sex, name, email, telephoneNumber, mobilePhoneNumber, address, villageBuilding, distric, province} = req.body;
+  const {gender, name, email, telephoneNumber, mobilePhoneNumber, address, villageBuilding, distric, province} = req.body;
   await db.user.update(
     {
-      Sex: sex,
+      Gender: gender,
       Name: name,
       Email: email,
       Telephone: telephoneNumber,
