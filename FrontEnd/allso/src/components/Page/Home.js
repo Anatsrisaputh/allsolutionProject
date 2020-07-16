@@ -35,7 +35,7 @@ function Home() {
     
         </div>
 
-        <div className="item-home-home" onClick={linkToHome}> <HomeRoundedIcon fontSize={"large"}/> </div>
+        <div className="item-home-home" > <a ><Link to="/"> <HomeRoundedIcon fontSize={"large"}/> </Link> </a> </div>
 
         <div className="item-home-search"> search
         <form>
@@ -45,9 +45,9 @@ function Home() {
 
         </div>
 
-        <div className="item-home-cart" onClick={()=>{console.log("Hello")}}> <ShoppingCartOutlinedIcon fontSize={"large"}/> </div>
+        <div className="item-home-cart" > <a ><Link to="/cart"> <ShoppingCartOutlinedIcon fontSize={"large"}/>  </Link> </a> </div>
 
-        <div className="item-home-profile" onClick={()=>{console.log("Profile")}}><AccountCircleRoundedIcon fontSize={"large"}/> </div>
+        <div className="item-home-profile" > <a><Link to="/profile"><AccountCircleRoundedIcon fontSize={"large"}/> </Link></a></div>
       </div>
       
         {/* ----------------Left Menu --------------- */}
@@ -72,7 +72,7 @@ function Home() {
         </div>
 
         {/*---------- Card ----------*/}
-        <div className="card-1">card-1
+        <div className="card-1">
           <Card
             hoverable
             style={{width: AutoComplete}}
@@ -83,13 +83,38 @@ function Home() {
           </Card>
         </div>
 
-        <div className="card-2">card-2</div>
+        <div className="card-2">
+          <Card
+              hoverable
+              style={{width: AutoComplete}}
+              cover={<img alt="Card-1" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+            >
+              <Meta title="Europe Street beat" description="www.instagram.com" />
+              <p>test</p>
+            </Card>
+        </div>
           
-        <div className="card-3">card-3 
-          <img alt="Card-2" src={Card2} id="card2-img"/>  
+        <div className="card-3">
+          <Card
+              hoverable
+              style={{width: AutoComplete}}
+              cover={<img alt="Card-1" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+            >
+              <Meta title="Europe Street beat" description="www.instagram.com" />
+              <Meta description="www.instagram.com"/>
+          </Card> 
         </div>
 
-        <div className="card-4">card-4</div>
+        <div className="card-4">
+          <Card
+              hoverable
+              style={{width: AutoComplete}}
+              cover={<img alt="Card-1" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+            >
+              <Meta title="Europe Street beat" description="www.instagram.com" />
+              <p>test</p>
+            </Card>
+        </div>
       </div>
 
         {/*---------- Slide ----------*/}
