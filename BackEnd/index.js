@@ -8,6 +8,7 @@ const itemRoute = require("./routes/item");
 const categoryRoute = require("./routes/category");
 const warrantyRoute = require("./routes/warranty");
 
+
 app.use(cors());
 app.use(express.json())
 app.use(express.urlencoded({ extended: false })) 
