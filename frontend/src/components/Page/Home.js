@@ -31,18 +31,13 @@ function Home() {
       
       {/* Main Nav */}
       <div className="Main-nav">
-        <div className="item-home-logo"> logo 
-    
-        </div>
 
         <div className="item-home-home" > <a ><Link to="/"> <HomeRoundedIcon fontSize={"large"}/> </Link> </a> </div>
 
-        <div className="item-home-search"> search
-        <form>
-            <input type="text" id="home-search" />
-            <button id="home-search-button"> search</button>
+        <div className="item-home-search"> 
+          <form>
+            <input type="text" id="home-search" /><button id="home-search-button"> ค้นหา</button>
           </form>
-
         </div>
 
         <div className="item-home-cart" > <a ><Link to="/cart"> <ShoppingCartOutlinedIcon fontSize={"large"}/>  </Link> </a> </div>

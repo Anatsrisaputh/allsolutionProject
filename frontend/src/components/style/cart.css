@@ -4,36 +4,7 @@
 }
 
 /* ---------- Nav Bar ---------- */
-#home-search {
-  width: 300px;
-  border-bottom-left-radius: 10px;
-  border-top-left-radius: 10px;
-}
-#home-search-button {
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  /* background-color: #2196F3; */
-  /* border: none; */
-  background-color: white;
-  color: grey;
-  text-align: center;
-  display: inline-block;
-  opacity: 0.6;
-  transition: 0.3s;
-  display: inline-block;
-  text-decoration: none;
-  cursor: pointer;
-}
 
-.Main-nav {
-  background-color: #EFEDED;
-  border: 1px solid black;
-  margin-left: 15%;
-  margin-right: 15%;
-  display: grid;
-  grid-template-columns: 15% 15% 40% 15% 15%;
-
-}
 
 /* ------------ Cart-Element -----------*/
 .cart-element {

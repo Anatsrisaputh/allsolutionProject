@@ -6,14 +6,7 @@
 }
 
 /* ---------- Top Element ----------*/
-.Main-nav {
-  background-color: #EFEDED;
-  border: 1px solid black;
-  margin-left: 15%;
-  margin-right: 15%;
-  display: grid;
-  grid-template-columns: 15% 15% 40% 15% 15%;
-}
+
 
 /* ---------- Center Element ----------*/
 .profile-center {
