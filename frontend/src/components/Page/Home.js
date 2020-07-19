@@ -4,9 +4,17 @@ import "../style/home.css";
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
 import AccountCircleRoundedIcon from '@material-ui/icons/AccountCircleRounded';
+import notebook from "../web-img/home/notebook.webp"
+import desktop from "../web-img/home/desktop.webp"
+import hardware from '../web-img/home/hardware.webp'
+import printer from "../web-img/home/printer.webp"
+import network from "../web-img/home/network.webp"
+
 
 
 import { Card, AutoComplete } from 'antd';
+import { Button  } from 'antd';
+import { red } from '@material-ui/core/colors';
 
 
 
@@ -47,7 +55,25 @@ function Home() {
       
         {/* ----------------Left Menu --------------- */}
       <div className="Home-center">
-        <div className="home-menu">
+
+      <div className="card-0">
+        <Card
+              hoverable
+              style={{width: AutoComplete}}
+              cover={<img alt="Card-0-notebook" src={notebook} />}
+            >
+              <Meta title="Notebook" description="14 inch/ AMD Ryzen 7 " />
+              <Meta description=" 3700U" />
+              <Meta description=" 12GB DDR4 / 1TB SSD" /> 
+              <Meta description="Integrated Graphics" />
+              <Meta description="win 10 home" />
+              <Meta title="Price: 23,000 THB." /> 
+              <br />
+              <Button type="primary" id="btn-add-cart-0">Add to cart</Button>
+            </Card>
+        </div>
+
+        {/* <div className="home-menu">
           <div className="Home-center-item-notebook">
             <button id="left-menu-button" onClick={console.log("btn-Notebook")}>Notebook</button>
           </div>
@@ -64,28 +90,37 @@ function Home() {
             <button id="left-menu-button" onClick={console.log("btn-SSD")}>SSD</button>
           </div>
 
-        </div>
+        </div> */}
+
 
         {/*---------- Card ----------*/}
         <div className="card-1">
-          <Card
-            hoverable
-            style={{width: AutoComplete}}
-            cover={<img alt="Card-1" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
-          >
-            <Meta title="Europe Street beat" description="www.instagram.com" />
-            <p>test</p>
-          </Card>
+        <Card
+              id={"card-1"}
+              hoverable
+              style={{width: AutoComplete}}
+              cover={<img alt="Card-1-desktop" src={desktop} />}
+            >
+              <Meta title="Desktop / AIO" description=" AMD Ryzen 5 " />
+              <Meta description="3400G" />
+              <Meta description="4GB DDR4 / 1TB" />  
+              <Meta description="Integrated Graphics" />
+              <Meta description="win 10 home" />
+              <Meta title="Price: 13,500 THB." /> 
+              <br />
+              <Button type="primary" id="btn-add-cart-1">Add to cart</Button>
+            </Card>
         </div>
 
         <div className="card-2">
           <Card
               hoverable
               style={{width: AutoComplete}}
-              cover={<img alt="Card-1" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+              cover={<img alt="hardware" src={hardware} />}
             >
               <Meta title="Europe Street beat" description="www.instagram.com" />
               <p>test</p>
+              <Button type="primary" id="btn-add-cart-2">Add to cart</Button>
             </Card>
         </div>
           
@@ -93,10 +128,12 @@ function Home() {
           <Card
               hoverable
               style={{width: AutoComplete}}
-              cover={<img alt="Card-1" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+              cover={<img alt="printer" src={printer} />}
             >
               <Meta title="Europe Street beat" description="www.instagram.com" />
               <Meta description="www.instagram.com"/>
+              <Button type="primary" id="btn-add-cart-4">Add to cart</Button>
+              
           </Card> 
         </div>
 
@@ -104,10 +141,11 @@ function Home() {
           <Card
               hoverable
               style={{width: AutoComplete}}
-              cover={<img alt="Card-1" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+              cover={<img alt="network" src={network} />}
             >
               <Meta title="Europe Street beat" description="www.instagram.com" />
               <p>test</p>
+              <Button type="primary" id="btn-add-cart-3">Add to cart</Button>
             </Card>
         </div>
       </div>
@@ -116,7 +154,9 @@ function Home() {
       <div className="Home-slide">Slide</div>
 
         {/*---------- Footer ----------*/}
-      <div className="Home-footer">Footer</div>
+      <div className="Home-footer">Footer
+      
+      </div>
     </div>
   )
 }

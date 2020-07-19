@@ -25,7 +25,7 @@ app.use("/warranty", warrantyRoute);
 // app.use(bodyParser.urlencoded({extended: false}));
 //bodyParser เป็นแบบเก่า แบบใหม่สามารถเขียน แบบนี้ได้เลย
 
-db.sequelize.sync({force: true}).then(() => {
+db.sequelize.sync({force: false}).then(() => {
   app.listen(8000, () => {
     console.log("Server is running on port 8000")
   })
