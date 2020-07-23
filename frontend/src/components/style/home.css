@@ -6,7 +6,7 @@
   width: 1080px;
   margin-left: 12.5%;
   margin-right: 12.5%;                                                                               ;
-  grid-template-rows: 90px 430px 430px 150px;
+  grid-template-rows: 90px 460px 400px 150px;
 }
 
 /* ---------- Main navbar -----------*/
@@ -111,7 +111,7 @@
 
 .Home-center {
   display: grid;
-  height: 430px;
+  height: 460px;
   background-color: #EFEDED;
   border: 1px solid black;
   grid-template-columns: 20% 20% 20% 20% 20%;
@@ -126,7 +126,7 @@
 }
 .Home-slide {
   border: 1px solid black;
-  height: 430px;
+  height: 400px;
 }
 #left-menu-button{
   width: 100%;

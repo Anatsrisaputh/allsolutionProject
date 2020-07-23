@@ -118,8 +118,13 @@ function Home() {
               style={{width: AutoComplete}}
               cover={<img alt="hardware" src={hardware} />}
             >
-              <Meta title="Europe Street beat" description="www.instagram.com" />
-              <p>test</p>
+              <Meta title="(sTRX4) MSI TRX40 PRO 10G" description="AMD TRX4 " />
+              <Meta description="8xDDR4 / 5xPCIe" />
+              <Meta description=" 13xUSB" />  
+              <Meta description="8xSATA" />
+              <Meta description=" 2xM.2 / ATX" />
+              <Meta title="Price: 16,900 THB." /> 
+              <br />
               <Button type="primary" id="btn-add-cart-2">Add to cart</Button>
             </Card>
         </div>
@@ -130,9 +135,14 @@ function Home() {
               style={{width: AutoComplete}}
               cover={<img alt="printer" src={printer} />}
             >
-              <Meta title="Europe Street beat" description="www.instagram.com" />
-              <Meta description="www.instagram.com"/>
-              <Button type="primary" id="btn-add-cart-4">Add to cart</Button>
+              <Meta title="HP LaserJet Pro MFP 137fnw" description="1200 x 1200 dpi " />
+              <Meta description="Copy / Scan / Fax"/>
+              <Meta description="LAN / Manual Duplex " />  
+              <Meta description="ADF * Support : AirPrint " />
+              <Meta description="Google Cloud Print" />
+              <Meta title="Price: 6,900 THB." /> 
+              <br />
+              <Button type="primary" id="btn-add-cart-3">Add to cart</Button>
               
           </Card> 
         </div>
@@ -143,9 +153,14 @@ function Home() {
               style={{width: AutoComplete}}
               cover={<img alt="network" src={network} />}
             >
-              <Meta title="Europe Street beat" description="www.instagram.com" />
-              <p>test</p>
-              <Button type="primary" id="btn-add-cart-3">Add to cart</Button>
+              <Meta title="Router D-LINK " description="DIR-2660" />
+              <Meta description="Wireless AC2600"/>
+              <Meta description="Dual Band" />  
+              <Meta description="10/100/1000" />
+              <Meta description="MU-MIMO" />
+              <Meta title="Price: 3,790 THB." /> 
+              <br />
+              <Button type="primary" id="btn-add-cart-4">Add to cart</Button>
             </Card>
         </div>
       </div>
