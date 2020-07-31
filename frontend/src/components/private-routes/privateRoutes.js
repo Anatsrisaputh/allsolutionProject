@@ -1,13 +1,14 @@
-import React from 'react'
-import configRoutes from "../../config/routes";
+import React, {useState, useEffect} from 'react'
+import configRoutes from "../../config/roles";
 import { Switch, Redirect, Route } from 'react-router-dom';
 
 
-function privateRoutes(props) {
+function PrivateRoutes(props) {
   const role = props.role || "guest";
 
-  const allowedRoutes = configRoutes[role].allowedRoutes;
-  const redirectRoute = configRoutes[role].redirectRoutes;
+  const allowedRoutes = configRoutes[role].route;
+  const redirectRoute = configRoutes[role].route;
+  console.log(allowedRoutes)
 
   return (
     
@@ -22,10 +23,10 @@ function privateRoutes(props) {
           </Route >
         
         ))}
-          <Redirect to={props.redirectRoute} />
+          <Redirect to={redirectRoute} />
       </Switch>
     </div>
   )
 }
 
-export default privateRoutes
+export default PrivateRoutes;

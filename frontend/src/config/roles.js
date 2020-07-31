@@ -32,7 +32,7 @@ const components = {
     url: "/confirm-cart",
     component: ConfirmCart
   },
-  Home: {
+  home: {
     url: "/",
     component: Home
   },
@@ -60,20 +60,18 @@ const components = {
 
 
 // Role ไหนเข้าหน้าไหนได้บ้าง
-
-export default {
+const configObject = {
   guest: {
-    allowedRoutes: [
-      components.Home,
+    route: [
+      components.home,
       components.login,
       components.register,
       components.warranty
-    ],
-    redirectRoutes: "/login"
+    ]
   },
   user: {
-    allowedRoutes: [
-      components.Home,
+    route: [
+      components.home,
       components.login,
       components.register,
       components.warranty,
@@ -81,22 +79,11 @@ export default {
       components.confirmCart,
       components.checkWarranty,
       components.profile,
-    ],
-    redirectRoutes: "/"
+    ]
   },
   superUser: {
-    allowedRoutes: [
-      components.Home,
-      components.login,
-      components.register,
-      components.warranty,
-      components.cart,
-      components.confirmCart,
-      components.checkWarranty,
-      components.profile,
-      components.addItems,
-      components.addWarranty
-    ],
-    redirectRoutes: "/"
+    route: [...Object.values(components)]
   }
 }
+
+export default configObject;
