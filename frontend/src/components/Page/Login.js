@@ -3,6 +3,7 @@ import 'antd/dist/antd.css';
 import { Form, Input, Button, Checkbox } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import "../style/login.css";
+import {Link} from 'react-router-dom'
 
 
 
@@ -64,7 +65,7 @@ export default function Login() {
         <Button type="primary" htmlType="submit" className="login-form-button">
           Log in
         </Button>
-        Or <p >register now!</p>
+        Or <p > <a> <Link to="/register">register now! </Link> </a> </p>
       </Form.Item>
     </Form>
     </div>
