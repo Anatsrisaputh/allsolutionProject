@@ -11,8 +11,9 @@ import Register from "../components/Page/Register";
 import Warranty from "../components/Page/Warranty";
 
 
+
 const components = {
-  addItems: {
+  addItem: {
     url: "/add-item",
     component: AddItems
   },
@@ -63,10 +64,7 @@ const components = {
 const configObject = {
   guest: {
     route: [
-      components.home,
-      components.login,
-      components.register,
-      components.warranty
+      ...Object.values(components)
     ]
   },
   user: {
