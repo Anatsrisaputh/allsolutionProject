@@ -5,17 +5,18 @@ const createItem = async (req, res) => {
   const {  name, price, brand, quantity, warrantystart, warrantyend} = req.body;
   const image = req.file;
   console.log(image);
+
+  const targetPath = image.path.slice(7)
   
-  // const addItem = await db.item.create(
-  //   {
-  //     id: id,
-  //     Image: image,
-  //     Name: name,
-  //     Price: price,
-  //     Brand: brand,
-  //     Quantity: quantity,
-  //   }
-  // )
+  const addItem = await db.item.create(
+    {
+      Image: targetPath,
+      Name: name,
+      Price: price,
+      Brand: brand,
+      Quantity: quantity,
+    }
+  )
   res.status(201).send(addItem);
   console.log("Add new item success");
 };

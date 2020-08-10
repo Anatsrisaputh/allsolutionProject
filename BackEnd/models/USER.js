@@ -29,7 +29,10 @@ module.exports = (sequelize, DataTypes) => {
     },
     Province: {
       type: DataTypes.STRING
-    }
+    },
+    role: {
+      type: DataTypes.STRING
+      }
   },
   {
     tableName: "user",

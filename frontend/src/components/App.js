@@ -6,7 +6,7 @@ import PrivateRoutes from './private-routes/privateRoutes';
 
 
 function App() {
-  const [role, setRole] = useState("guest");
+  const [role, setRole] = useState(localStorage.getItem('role')?'user': 'guest');
   return (
     <div className="App">
       <PrivateRoutes role={role} setRole={setRole} />

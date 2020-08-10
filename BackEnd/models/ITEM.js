@@ -1,9 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
   const item = sequelize.define('item', {
-    id: {
-      type: DataTypes.STRING,
-      primaryKey: true
-    },
+  
     Image: {
       type: DataTypes.STRING
     },

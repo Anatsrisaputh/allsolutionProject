@@ -20,6 +20,7 @@ function PrivateRoutes(props) {
           key={route.url}
           >
           <route.component setRole={props.setRole} />
+          
           </Route >
         
         ))}

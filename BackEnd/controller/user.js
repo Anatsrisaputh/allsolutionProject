@@ -1,16 +1,34 @@
 const db = require("../models");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
-const getAllUser = async (req, res) => {
-  const allUser = await req.user.findAll();
-  res.send(allUser);
-};
+const login = async (req, res) => {
+  const {username, password} = req.body;
+  const targetUser = await db.user.findOne({ where: {Name: username}})
+  if (targetUser) {
+    const match = await bcrypt.compare(password, targetUser.Password);
+    if (match) {
+      const token = jwt.sign({id: targetUser.id}, process.env.JWT_SECRET, {expiresIn: "1d"})
+      
+      return res.send({user: targetUser, token});
+    }
+   
+  } else {
+    return res.status(400).send({message: "User not found"});
+   }
+}
+
+// const getAllUser = async (req, res) => {
+//   const allUser = await req.user.findAll();
+//   res.send(allUser);
+// };
 
 const getUserById = async (req, res) => {
   const idUser = Number(req.params.id);
   const targetUser = await db.user.findOne({ where: { id: idUser } });
 
   if (targetUser) {
+    
    return res.send(targetUser);
   } else {
    return res.status(400).send("User not found");
@@ -29,6 +47,7 @@ const createNewUser = async (req, res) => {
           Name: name,
           Email: email,
           Password: hashPassword,
+          role: "user"
         }
       );
       res.status(201).send({ message: "User create"});
@@ -65,7 +84,7 @@ const deleteUserById = async (req, res) => {
 };
 
 module.exports = {
-  getAllUser,
+  login,
   getUserById,
   createNewUser,
   editUserById,

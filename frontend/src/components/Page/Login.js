@@ -3,13 +3,32 @@ import 'antd/dist/antd.css';
 import { Form, Input, Button, Checkbox } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import "../style/login.css";
-import {Link} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
+import axios from "../../config/axios";
+
 
 
 
 export default function Login() {
-  const onFinish = values => {
+
+  const history = useHistory();
+  const onFinish = async values => {
     console.log('Received values of form: ', values);
+    const body = {
+      username: values.username,
+      password: values.password
+    }
+
+    try {
+      const res = await axios.post("/user/login", body);
+      console.log(res.data);
+      localStorage.setItem("token", res.data.token);
+      localStorage.setItem("role", res.data.user.role);
+      history.push("/")
+      
+    } catch (error) {
+      console.log(error.response.status, error.status.message);
+    }
   };
 
   
