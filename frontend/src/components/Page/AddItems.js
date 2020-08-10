@@ -16,13 +16,9 @@ function AddItems() {
   // Upload picture
 
   const handleUploadImage = (e) => {
-    const file = e.target.files[0] // เก็บไว้ setState ลงใน file
-    const reader = new FileReader(); // เรียก Class FileReader เพื่อแปลง file image ที่รับเข้ามา
-    reader.onloadend = () => { // เป็น eventของFileReaderเมื่อโหลดภาพเสร็จ
-      setFile(file) // ทำการ setState
-      setImagePreviewUrl(reader.result) //เหมือนด้านบน
-    }
-    reader.readAsDataURL(file) // เป็นส่วนของการแสดงรูป ไม่ค่อยแน่ใจครับ 
+   setFile(e.target.files[0])  // เก็บไว้ setState ลงใน file
+   setImagePreviewUrl(URL.createObjectURL(e.target.files[0]));
+   
   }
 
   const onchangeName = (e) => {
@@ -42,27 +38,25 @@ function AddItems() {
   }
 
 
-  const confirmAddItem = async value => {
-    const body = {
-      name: value.name,
-      price: value.price,
-      brand: value.brand,
-      quantity: value.quantity
-    }
-
+  const confirmAddItem = async (e)  => {
+    e.preventDefault();
+  
     const formData = new FormData() //สร้างตัวแปร มารับ Class FormData
-    formData.append('file', file) //arg แรกนั้นเป็น ชื่อ Key ส่วน arg2 เป็น Value
-
-    await axios.post("/item/add", body, file);
-    alert("Add Item success")
-
+    formData.append('pic', file) //arg แรกนั้นเป็น ชื่อ Key ส่วน arg2 เป็น Value
+    formData.append('name', name);
+    formData.append('price', price);
+    formData.append('brand', brand);
+    formData.append('quantity', quantity);
+    await axios.post("/item/add", formData);
+    alert("Add Item success");
   }
 
   return (
     <div className="add-item-main-container">
       <div className="form-add-item">
-        <form >
+        <form onSubmit={confirmAddItem}>
           {/* <p > {imagePreviewUrl} </p> */}
+          <div className="previewImage" > <img src={imagePreviewUrl}></img> </div>
           <input type="file" className="item-upload" onChange={handleUploadImage} /> <br /> <br />
 
           <label>ชื่อสินค้า : </label>
@@ -77,7 +71,7 @@ function AddItems() {
           <label>จำนวน : </label>
           <input type="text" className="item-quantity" value={quantity} onChange={onchangeQuantity} /> <br /> <br />
 
-          <button onClick={confirmAddItem}>ยืนยัน</button>
+          <button>ยืนยัน</button>
 
         </form>
       </div>
